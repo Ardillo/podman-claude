@@ -1,7 +1,6 @@
 FROM alpine:latest 
 
-RUN apk add --no-cache curl bash
-RUN apk add --no-cache g++ gcc
+RUN apk add --no-cache curl bash libstdc++ 
 
 RUN curl -fsSL https://claude.ai/install.sh | /bin/bash
 
@@ -11,4 +10,5 @@ COPY config/claude.json /root/.claude.json
 
 WORKDIR /mnt
 
-ENTRYPOINT ["claude"]
+ENTRYPOINT ["/bin/bash", "-c"]
+# ENTRYPOINT ["claude"]
