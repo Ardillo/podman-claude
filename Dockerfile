@@ -10,5 +10,5 @@ COPY config/claude.json /root/.claude.json
 
 WORKDIR /mnt
 
-ENTRYPOINT ["/bin/bash", "-c"]
-# ENTRYPOINT ["claude"]
+# ENTRYPOINT ["/bin/bash", "-c"]
+ENTRYPOINT ["claude"]
